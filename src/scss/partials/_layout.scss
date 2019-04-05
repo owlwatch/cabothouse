@@ -1,0 +1,42 @@
+*:first-child {
+	margin-top: 0;
+}
+*:last-child {
+	margin-bottom: 0;
+}
+
+@media (max-width: 980px){
+	body .et_pb_column {
+		margin-bottom: 0;
+		+ .et_pb_column {
+			margin-top: 50px;
+		}
+	}
+	body .et_pb_row{
+		width: 90%;
+	}
+}
+
+.eapps-widget.eapps-instagram-feed-popup {
+	display: none;
+	z-index: 999999 !important;
+}
+.eapps-widget.eapps-instagram-feed-popup-visible {
+	display: block;
+}
+// /*** Take out the divider line between content and sidebar ***/
+// @media (min-width: 981px){
+// 	body #main-content .container:before {
+// 		display: none;
+// 	}
+// }
+// /*** Expand the content area to fullwidth ***/
+// @media (min-width: 981px){
+// 	#left-area {
+// 	    width: 100%;
+// 	    padding: 23px 0px 0px !important;
+// 	    float: none !important;
+// 	}
+// }
+// /*** Hide Sidebar ***/
+// #sidebar {display:none;}

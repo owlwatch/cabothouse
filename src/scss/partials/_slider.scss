@@ -1,0 +1,35 @@
+@media( min-width: 981px ){
+    .et_fullscreen_slider .et_pb_slide{
+        min-height: calc(100vh - 128px);
+        .admin-bar & {
+            min-height: calc(100vh - 128px - 28px);
+        }
+    }
+
+}
+
+.et_pb_slider.bottom-caption {
+    .et_pb_slide {
+        padding: 0;
+        .et_pb_slide_description {
+            padding: 0;
+        }
+        .et_pb_container {
+            display: table;
+        }
+        .et_pb_slider_container_inner {
+            display: table-cell;
+            vertical-align: bottom;
+        }
+        .et_pb_text_overlay_wrapper {
+            background: rgba(0,0,0,0.3);
+            padding: 10px 20px;
+            border-radius: 0;
+        }
+        .et_pb_slide_content {
+            font-size: 16px;
+            line-height: 1.5;
+            text-align: left;
+        }
+    }
+}

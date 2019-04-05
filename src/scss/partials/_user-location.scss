@@ -1,0 +1,36 @@
+.user-location {
+
+	text-align: left;
+	line-height: 1.4;
+	font-size: 16px;
+
+	&__label {
+		font-size: 10px;
+		text-transform: uppercase;
+		letter-spacing: 0.03em;
+		font-weight: 400;
+		color: #666;
+		@media (max-width: 980px) {
+			font-size: 12px;
+		}
+	}
+	&__value {
+		font-size: 13px;
+		text-transform: none;
+		letter-spacing: 0.06em;
+		font-weight: 500;
+		cursor: pointer;
+		@media (max-width: 980px) {
+
+		}
+	}
+	.fa-angle-down {
+		transition: .3s all;
+		transform: rotate(0deg);
+	}
+	&.-open {
+		.fa-angle-down {
+			transform: rotate(-180deg);
+		}
+	}
+}

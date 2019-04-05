@@ -1,0 +1,48 @@
+.chx-manufacturers-grid {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+	text-align: center;
+	margin-top: -20px;
+	margin-bottom: -20px;
+}
+.chx-manufacturer {
+	padding: 20px;
+	margin: 30px 0px;
+	display: block;
+	flex-basis: 300px;
+	flex-grow: 1;
+	h3 {
+		display: none;
+	}
+	img {
+		transform: scale(0.9);
+		transition: 0.4s all;
+	}
+	&:hover {
+		img {
+			transform: scale(1);
+		}
+	}
+}
+
+
+.chx-carousel--item {
+	display: flex;
+	height: 150px;
+	width: 100%;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+}
+
+.chx-manufacturer__title {
+	text-align: center;
+	img {
+		max-width: 400px;
+		max-height: 200px;
+		width: auto;
+		height: auto;
+	}
+}

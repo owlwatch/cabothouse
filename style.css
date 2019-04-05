@@ -1,0 +1,113 @@
+/*
+ Theme Name:   Cabot House (Divi Child)
+ Theme URI:    http://cabothouse.com/
+ Description:  Cabot House theme (child of Divi 2.5)
+ Author:       Mark Fabrizio
+ Author URI:   http://owlwatch.com
+ Template:     Divi
+ Version:      1.0.0
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+ Tags:         light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready
+ Text Domain: cabothouse.com
+*/
+@import url(../Divi/style.css);
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css);
+
+body {
+	font-family: "proxima-nova",sans-serif;;
+}
+
+
+/* === Begin: Set the divi slider height === */
+/* Src: https://divibooster.com/changing-the-height-of-the-divi-slider/ */
+
+/* Desktop */
+.myslider .et_pb_slide .et_pb_container {
+	height: auto !important;
+	min-height: 800px !important;
+}
+/* Tablet */
+@media only screen and (min-width: 768px) and (max-width: 980px) {
+	.myslider .et_pb_slide .et_pb_container {
+		height: auto !important;
+		min-height: 500px !important;
+	}
+}
+/* Phone */
+@media only screen and (max-width: 767px) {
+	.myslider .et_pb_slide .et_pb_container {
+		height: auto !important;
+		min-height: 500px !important;
+	}
+}
+
+/* Handle padding */
+.myslider .et_pb_slide {
+	padding-bottom: 0px !important;
+}
+.myslider div.et_pb_slide_description,
+.myslider .et_pb_slider_fullwidth_off div.et_pb_slide_description {
+	padding-top: 1%;
+	padding-bottom: 1%;
+}
+
+/* === End: Set divi slider height === */
+
+
+/* Remove shopping cart icon in header */
+/* .et-cart-info { display:none; } */
+
+/* Cleanup Store links in footer */
+
+.nine-columns .et_pb_module {width: 11.11%; float: left;}
+
+#footer-widgets {
+    padding: 0% 0 0;
+}
+.et_pb_blurb.et_pb_text_align_left .et_pb_blurb_content .et_pb_blurb_container {
+    text-align: center;
+}
+
+h4 {
+padding-top: 30px !important;
+}
+
+
+.dotstyle-puff .et-pb-controllers a::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	visibility: hidden;
+	background: #c44d48;
+	border-radius: 50%;
+	box-shadow: 0 0 1px #c44d48;
+	opacity: 0;
+	-webkit-transform: scale(3);
+	-moz-transform: scale(3);
+	transform: scale(3);
+	-webkit-transition: opacity 0.3s ease, -webkit-transform 0.3s ease, visibility 0s 0.3s;
+	-moz-transition: opacity 0.3s ease, -moz-transform 0.3s ease, visibility 0s 0.3s;
+	transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s 0.3s;
+}
+
+.dotstyle-puff .et-pb-controllers a:hover,
+.dotstyle-puff .et-pb-controllers a:focus,
+.dotstyle-puff .et-pb-controllers a.et-pb-active-control {
+	border-color: #c44d48;
+}
+
+.dotstyle-puff .et-pb-controllers a.et-pb-active-control:after {
+	visibility: visible;
+	opacity: 1;
+	-webkit-transform: scale(1);
+	-moz-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: opacity 0.3s ease, -webkit-transform 0.3s ease;
+	-moz-transition: opacity 0.3s ease, -moz-transform 0.3s ease;
+	transition: opacity 0.3s ease, transform 0.3s ease;
+}
+/* END PUFF  */

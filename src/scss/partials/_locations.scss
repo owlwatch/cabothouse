@@ -1,0 +1,81 @@
+.store-location-row {
+	background: #f2f2f2;
+	margin-bottom: 40px !important;
+	//padding: 40px !important;
+	.et_pb_module {
+		margin-bottom: 0 !important;
+	}
+}
+
+.location-hours {
+	text-align: center;
+}
+.location-map {
+	height: 100%;
+	> .et_pb_map {
+		height: 100% !important;
+	}
+}
+.store-hours {
+	display: table;
+	text-align: left;
+	margin: 0 auto;
+	> div {
+		display: table-row;
+		> div {
+			display: table-cell;
+			vertical-align: text-bottom;
+		}
+	}
+	&--current-day {
+		border: 1px solid #ffffff;
+	}
+	&--day-label {
+		padding-right: 10px;
+		font-weight: bold;
+		font-family: $font-serif;
+		text-align: center;
+	}
+	&--day-value {
+		font-size: 15px;
+	}
+}
+.gm-style .gm-style-iw {
+	font-size: 15px;
+	line-height: 1.4em;
+	h3 {
+		margin-bottom: 0.5em !important;
+		font-size: 26px;
+	}
+}
+
+.single-location {
+	.et_pb_fullwidth_section  .et_pb_map {
+		height: 500px;
+		@media (max-width: 980px) {
+			height: 350px;
+		}
+		@media (max-width: 479px){
+			height: 350px;
+		}
+	}
+
+	.info-row {
+		h4 {
+			padding-top: 0 !important;
+		}
+		text-align: center;
+		//background: #f2f2f2;
+		@media (min-width: 981px) {
+			text-align: left;
+			.store-hours-container {
+				display: table;
+				text-align: center;
+			}
+		}
+	}
+
+	.store-address {
+
+	}
+}
