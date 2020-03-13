@@ -5,7 +5,7 @@
   "main": "assets/cabothouse.js",
   "devDependencies": {
     "node-sass": "^4.10.0",
-    "sass": "^1.17.4"
+    "sass": "^1.21.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

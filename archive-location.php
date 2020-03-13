@@ -10,6 +10,7 @@ if ( have_posts() ) :
 			<?php
 			the_content();
 			?>
+			hello
 		</article> <!-- .et_pb_post -->
 <?php
 		endwhile;

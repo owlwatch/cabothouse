@@ -75,7 +75,31 @@
 		}
 	}
 
-	.store-address {
+}
 
+.location-designers {
+	margin-top: 1em;
+	&__list-item {
+		list-style: none;
+		margin-top: 12px;
+		&:first-child {
+			margin-top: 0;
+		}
+		> a {
+			display: flex;
+			align-items: center;
+			> div {
+				line-height: 1.3;
+				padding-left: 10px;
+				flex: 1;
+			}
+		}
+	}
+	&__thumbnail {
+		display: block;
+		width: 50px;
+		height: 50px;
+		border-radius: 6px;
+		background-size: cover;
 	}
 }

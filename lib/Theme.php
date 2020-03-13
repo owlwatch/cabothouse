@@ -4,6 +4,8 @@ namespace Theme;
 
 class Theme extends Singleton
 {
+	const VERSION = '2.0.0';
+	
 	protected function __construct()
 	{
 		if( !is_admin() ){

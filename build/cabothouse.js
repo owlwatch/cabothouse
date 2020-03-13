@@ -5,8 +5,6 @@
 //
 // anything defined in a previous bundle is accessed via the
 // orig method which is the require for previous bundles
-
-// eslint-disable-next-line no-global-assign
 parcelRequire = (function (modules, cache, entry, globalName) {
   // Save the require from previous bundle to this closure if any
   var previousRequire = typeof parcelRequire === 'function' && parcelRequire;
@@ -77,8 +75,16 @@ parcelRequire = (function (modules, cache, entry, globalName) {
     }, {}];
   };
 
+  var error;
   for (var i = 0; i < entry.length; i++) {
-    newRequire(entry[i]);
+    try {
+      newRequire(entry[i]);
+    } catch (e) {
+      // Save first error but execute all entries
+      if (!error) {
+        error = e;
+      }
+    }
   }
 
   if (entry.length) {
@@ -103,6 +109,13 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   // Override the current require with this new one
+  parcelRequire = newRequire;
+
+  if (error) {
+    // throw error from earlier, _after updating parcelRequire_
+    throw error;
+  }
+
   return newRequire;
 })({"scss/index.scss":[function(require,module,exports) {
 
@@ -739,7 +752,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
           $('<h4 />').html(title).appendTo($data);
           return $data.html();
         },
-        markup: '<div class="mfp-figure">' + '<div class="mfp-close"></div>' + '<div class="mfp-top-bar">' + '<div class="mfp-title"></div>' + '</div>' + '<div class="mfp-img"></div>' + '<div class="mfp-bottom-bar">' + '<div class="mfp-details">' + '<div class="mfp-details-buttons">' + '<button class="mfp-info" data-toggle="mfp-caption">' + '<span class="fas fa-angle-up"></span> ' + 'Details' + '</button>' + '<button class="mfp-info" data-action="inquire">' + '<span class="fas fa-comment-alt"></span> ' + 'Ask about this item' + '</button>' + '</div>' + '<div class="mfp-caption-container">' + '<div class="mfp-caption"></div>' + '</div>' + '</div>' + //'<div class="inquire-button"></div>'+
+        markup: '<div class="mfp-figure">' + '<div class="mfp-close"></div>' + '<div class="mfp-top-bar">' + '<div class="mfp-title"></div>' + '</div>' + '<div class="mfp-img"></div>' + '<div class="mfp-bottom-bar">' + '<div class="mfp-details">' + '<div class="mfp-details-buttons">' + '<button class="mfp-info" data-toggle="mfp-caption">' + '<span class="fas fa-angle-up"></span> ' + 'Details' + '</button>' + '<button class="mfp-info" data-action="inquire">' + '<span class="fas fa-comment-alt"></span> ' + 'Like What You see? Get this look' + '</button>' + '</div>' + '<div class="mfp-caption-container">' + '<div class="mfp-caption"></div>' + '</div>' + '</div>' + //'<div class="inquire-button"></div>'+
         '<div class="mfp-counter"></div>' + '</div>' + '</div>' // Popup HTML markup. `.mfp-img` div will be replaced with img tag, `.mfp-close` by close button
 
       };
@@ -1101,4 +1114,4 @@ require("./scss/index.scss");
 
 require("./js/index");
 },{"./scss/index.scss":"scss/index.scss","./js/index":"js/index.js"}]},{},["cabothouse.js"], null)
-//# sourceMappingURL=/cabothouse.map
+//# sourceMappingURL=/cabothouse.js.map

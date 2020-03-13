@@ -5,9 +5,10 @@ $labels = [
 ];
 
 // lets get the hours
-
 $week = get_field( 'hours', is_singular('location') ? get_queried_object_id() : get_the_ID() );
 // these are organized by index: 0-6 = M-Su
+
+$hours_note = get_field('hours_note', is_singular('location') ? get_queried_object_id() : get_the_ID());
 
 // lets let them know if CH is open right now
 $day = (int)current_time( 'w' );
@@ -30,9 +31,12 @@ if( is_array( $week ) ) foreach( array_values($week) as $i => $hours ){
 		<div class="store-hours--day-value">
 			<?php
 			if( $hours['closed'] ){
-				?>
-				Closed
-				<?php
+				if( $hours['special_note'] ){
+					echo $hours['special_note'];
+				}
+				else {
+					echo 'Closed';
+				}
 			}
 			else {
 				echo $hours['open'].' - '.$hours['close'];
@@ -44,3 +48,9 @@ if( is_array( $week ) ) foreach( array_values($week) as $i => $hours ){
 }
 ?>
 </div>
+
+<?php if( $hours_note ){ ?>
+	<div class="store-hours__note">
+		<p><?php echo $hours_note; ?></p>
+	</div>
+	<?php } ?>

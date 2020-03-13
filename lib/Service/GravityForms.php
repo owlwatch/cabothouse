@@ -63,9 +63,12 @@ class GravityForms extends Singleton
 
 	public function routeAdminEmails( $notification, $form, $entry )
 	{
-		if( !preg_match('/^internal:/i', $notification['name'] ) ){
+		if( !preg_match('/^internal\:/i', $notification['name'] ) ){
+			error_log( 'not routing notification: '.$notification['name'] );
 			return $notification;
 		}
+
+		error_log( 'should be routing notification: '.$notification['name'] );
 
 		// check for a location field
 		foreach( $form['fields'] as $field ){
@@ -85,7 +88,21 @@ class GravityForms extends Singleton
 				}
 				break;
 			}
+
+			if( $field['inputName'] == 'designer_id' ){
+				$email = get_field('email', $entry[$field['id']] );
+				if( $email ){
+					if( !get_field( 'development_mode', 'theme' ) ){
+						$notification['to'] = $email;
+					}
+					else {
+						$notification['message'].="\n\n<hr />Dev Note: this would send to ${email}";
+					}
+				}
+				break;
+			}
 		}
+		error_log( print_r( $notification, 1 ) );
 		return $notification;
 	}
 

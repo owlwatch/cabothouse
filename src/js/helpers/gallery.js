@@ -31,7 +31,7 @@
 										'</button>'+
 										'<button class="mfp-info" data-action="inquire">'+
 											'<span class="fas fa-comment-alt"></span> '+
-											'Ask about this item'+
+											'Like What You see? Get this look'+
 										'</button>'+
 									'</div>'+
 									'<div class="mfp-caption-container">'+

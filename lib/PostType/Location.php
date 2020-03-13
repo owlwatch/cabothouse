@@ -87,8 +87,8 @@ class Location extends Singleton
 
 		while( $query->have_posts() ){
 			$query->the_post();
-			$pins[] = $this->mapPin();
-			$rows[] = $this->locationRow();
+			$pins[] = $this->mapPin( get_the_ID() );
+			$rows[] = $this->locationRow( get_the_ID() );
 		}
 		// we also need to replace the pin
 		wp_reset_postdata();
@@ -99,11 +99,11 @@ class Location extends Singleton
 		return $map.implode('',$rows);
 	}
 
-	public function mapPin()
+	public function mapPin( $id )
 	{
-		$name = get_post()->post_title;
-		$address = get_field( 'address' );
-		$location = get_field( 'location' );
+		$name = get_post( $id  )->post_title;
+		$address = get_field( 'address', $id );
+		$location = get_field( 'location', $id );
 		$lat = $location['lat'];
 		$lng = $location['lng'];
 		$address_attr = esc_attr( str_replace("\n", ' ', $address) );
@@ -114,13 +114,15 @@ class Location extends Singleton
 		return ob_get_clean();
 	}
 
-	public function locationRow()
+	public function locationRow( $id  )
 	{
+		global $SHORTCODE_POST_ID;
 		$template = get_field( 'template_location_row', 'theme' );
-
+		$SHORTCODE_POST_ID = $id;
 		$output = do_shortcode( $template->post_content );
+		$SHORTCODE_POST_ID = null;
 
-		$location = get_field('location');
+		$location = get_field('location', $id );
 		$output = preg_replace(
 			'/(data(\-center)?\-lat)="(.*?)"/',
 			'$1="'.$location['lat'].'"',

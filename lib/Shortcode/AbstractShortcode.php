@@ -22,9 +22,18 @@ abstract class AbstractShortcode extends Singleton
 
 	public function doShortcode( $atts, $content, $tag )
 	{
+		global $SHORTCODE_POST_ID;
+		if( isset( $SHORTCODE_POST_ID ) ){
+			global $post;
+			$post = get_post( $SHORTCODE_POST_ID );
+			setup_postdata( $post );
+		}
 		ob_start();
 		$this->run( $atts, $content, $tag );
 		$output = ob_get_clean();
+		if( isset( $SHORTCODE_POST_ID ) ){
+			wp_reset_postdata();
+		}
 		return $output;
 	}
 
