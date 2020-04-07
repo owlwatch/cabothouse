@@ -1,5 +1,18 @@
 <?php
 ob_start();
+
+add_filter( 'et_html_logo_container', function( $html ){
+	$search = '</div>';
+	$pos = strrpos( $html, $search );
+	if( $pos !== false ){
+		ob_start();
+		dynamic_sidebar('logo-right');
+		$updated = ob_get_clean().'</div>';
+		$html = substr_replace($html, $updated, $pos, strlen($search) );
+	}
+	return $html;
+});
+
 include get_template_directory().'/header.php';
 $header = ob_get_clean();
 
@@ -26,4 +39,5 @@ $header = preg_replace_callback('#<img[^>]+?id="logo"[^>]*?/>#', function($match
 	}
 	return $svgElement->asXML();
 }, $header);
+
 echo $header;

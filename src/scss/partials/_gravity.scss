@@ -15,10 +15,10 @@ body div.form_saved_message div.form_saved_message_emailform form input[type=tex
 body .gform_wrapper select.gfield_select {
 	border: 1px solid rgba(0, 0, 0, 0.2);
 	background-color: #fff;
-	padding: 12px;
+	padding: 8px;
 	box-shadow: 0px 2px 12px -2px rgba(0, 0, 0, 0.2);
 	color: #333;
-	font-size: 18px;
+	font-size: 16px;
 	line-height: 1.2;
 }
 
@@ -27,28 +27,21 @@ body .gform_wrapper input[type="submit"],
 body .gform_wrapper button {
 	display: inline-block;
 	position: relative;
-    border: 2px solid;
-    background-color: transparent;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+    border: 1px solid rgba(10, 2, 2, 0.23);
+    background-color: #fff;
     font-size: 20px;
     font-weight: 500;
     line-height: 1.7em!important;
     -webkit-transition: all .2s;
     -moz-transition: all .2s;
     transition: all .2s;
-	background: #0a0a0a;
-	border-width: 0px!important;
 	border-color: #c9c9c9;
 	border-radius: 0px;
 	padding: .3em 1em!important;
-	color: #fffffe;
+	color: #212121;
 	cursor: pointer;
 	&:hover {
-		border: 2px solid transparent;
-		background: #5b5b5b!important;
-    	border-radius: 0px;
+		border-color: rgba(10, 2, 2, 1);
 	}
 }
 

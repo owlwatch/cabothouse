@@ -4,7 +4,7 @@ namespace Theme;
 
 class Theme extends Singleton
 {
-	const VERSION = '2.0.0';
+	const VERSION = '2.0.3';
 	
 	protected function __construct()
 	{
@@ -21,6 +21,8 @@ class Theme extends Singleton
 		$this->registerPostTypesAndTaxonomies();
 		$this->registerPlugins();
 		$this->registerServices();
+
+		$this->registerSidebars();
 
 	}
 
@@ -40,6 +42,10 @@ class Theme extends Singleton
 		Service\ShadowTaxonomy::register(
 			PostType\Location::NAME
 		);
+		add_action('init', function(){
+			register_taxonomy_for_object_type( 'category', 'page' );
+			register_taxonomy_for_object_type( 'post_tag', 'page' );
+		});
 	}
 
 	protected function registerPlugins()
@@ -52,5 +58,15 @@ class Theme extends Singleton
 	{
 		Service\GravityForms::init();
 		Service\CollectionService::init();
+	}
+
+	public function registerSidebars()
+	{
+		register_sidebar([
+			'name' => 'Logo Right',
+			'id' => 'logo-right',
+			'before_widget' => '<div class="logo-right">',
+			'after_widget' => '</div>'
+		]);
 	}
 }

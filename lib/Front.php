@@ -32,7 +32,7 @@ class Front extends Singleton
 		wp_deregister_script( 'db_pb_map_pin' );
 		wp_enqueue_style( 'fontawesome', 'https://use.fontawesome.com/releases/v5.3.1/css/all.css' );
 		wp_enqueue_style( 'izimodal', 'https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.5.1/css/iziModal.min.css' );
-		wp_enqueue_style( 'cabothouse', get_stylesheet_directory_uri().'/build/cabothouse.css' );
+		wp_enqueue_style( 'cabothouse', get_stylesheet_directory_uri().'/build/cabothouse.css', [], Theme::VERSION );
 		wp_enqueue_script( 'izimodal', 'https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.5.1/js/iziModal.min.js' );
 		wp_enqueue_script( 'cabothouse', get_stylesheet_directory_uri().'/build/cabothouse.js', ['izimodal'], Theme::VERSION );
 

@@ -18,7 +18,7 @@ get_header();
 				
 				
                 <div class="et_pb_row et_pb_row_0">
-            <div class="et_pb_column et_pb_column_2_5 et_pb_column_0    et_pb_css_mix_blend_mode_passthrough chx-designer__sticky-column">
+            <div class="et_pb_column et_pb_column_2_5 et_pb_column_0    et_pb_css_mix_blend_mode_passthrough">
             
             
             <div class="et_pb_module et_pb_image et_pb_image_0 et_always_center_on_mobile">
@@ -74,7 +74,7 @@ if( count( $terms ) ){
     }
 }
 
-$page = get_page_by_path('designers');
+$page = get_page_by_path('interior-designers');
 if( $page ){
     ?>
     <hr style="border-style: solid; border-width: 1px 0 0; border-color: #ccc;" />
@@ -98,7 +98,7 @@ if( $page ){
         if( !empty($portfolio) ){
             ob_start();
             ?>
-            [et_pb_slider show_pagination="off" admin_label="Designer Portfolio Photos" _builder_version="3.21.1"]
+            [et_pb_slider show_pagination="off" admin_label="Designer Portfolio Photos" _builder_version="3.21.1" module_class="slider-4-3"]
             <?php
             foreach( $portfolio as $image){
                 ?>
@@ -119,6 +119,8 @@ if( $page ){
             
             <div class="et_pb_text_inner">
                 <?php
+                wp_reset_postdata();
+                wp_reset_query();
                 the_content();
                 ?>
             </div>
@@ -128,9 +130,8 @@ if( $page ){
         if( $designer_form_id ){
             ?>
         <div class="chx-designer-form">
-            <p><strong>Contact <?php echo get_field( 'first_name' ); ?></strong></p>
-            <p>Fill in the form below to send a message to <?php echo get_field( 'first_name' ); ?>.</p>
             <hr style="border-style: solid; border-width: 1px 0 0; border-color: #ccc;" />
+            <h4>Contact <?php echo get_field( 'first_name' ); ?></h4>
             <?php
             echo do_shortcode('[gravityform id="'.$designer_form_id.'" title="false" description="false" ajax="true"]');
         }

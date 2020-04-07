@@ -3,7 +3,6 @@
 
 	$(document).on('et_pb_after_init_modules', function(){
 		jQuery('.et_post_gallery').each(function(){
-
 			$(this).data().magnificPopup.image = {
 				titleSrc: function(item){
 					var title = item.el.attr('title');
@@ -72,6 +71,15 @@
 
 			});
 
+			var hash = window.location.hash.replace(/^#/,'');
+			var $a = $(this).find('a[href="'+hash+'"]');
+			if( hash && $a.length ){
+				$a.click();
+				var url =location.pathname+
+						 (location.search?location.search:"");
+				window.history.replaceState({},'',url);
+			}
+
 		});
 		$(document).on('click', '[data-toggle="mfp-caption"]', e => {
 			let $btn = $(e.target);
@@ -100,5 +108,6 @@
 				$btn.data('title'), $btn.data('image')
 			]);
 		});
+		
 	});
 })(jQuery);
