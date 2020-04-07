@@ -4,7 +4,7 @@ namespace Theme;
 
 class Theme extends Singleton
 {
-	const VERSION = '2.0.4';
+	const VERSION = '2.0.5';
 	
 	protected function __construct()
 	{
