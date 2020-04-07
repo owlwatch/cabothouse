@@ -31,15 +31,15 @@ body .gform_wrapper button {
     background-color: #fff;
     font-size: 20px;
     font-weight: 500;
-    line-height: 1.7em!important;
+    line-height: 1.7em !important;
     -webkit-transition: all .2s;
     -moz-transition: all .2s;
     transition: all .2s;
 	border-color: #c9c9c9;
 	border-radius: 0px;
-	padding: .3em 1em!important;
+	padding: .3em 1em !important;
 	color: #212121;
-	cursor: pointer;
+	cursor: pointer !important;
 	&:hover {
 		border-color: rgba(10, 2, 2, 1);
 	}
