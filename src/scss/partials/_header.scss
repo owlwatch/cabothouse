@@ -109,6 +109,9 @@
 		}
 	}
 	@media( max-width: 980px ){
+		&.et_fixed_nav.et_show_nav #page-container {
+			padding-top: 220px;
+		}
 		.logo_container {
 			height: auto !important;
 		}
