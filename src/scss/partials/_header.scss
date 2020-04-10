@@ -233,11 +233,6 @@
 	}
 
 }
-@media( max-width: 980px ){
-	body.et_fixed_nav.et_show_nav.et_header_style_centered #page-container {
-		padding-top: 266px;
-	}
-}
 body #et-secondary-nav a {
 	transition: 0.2s all;
 	&:hover {
@@ -248,4 +243,10 @@ body #et-secondary-nav a {
 
 .et_pb_fullwidth_header .et_pb_fullwidth_header_container.left .header-content {
 	margin-right: 0 !important;
+}
+
+@media( max-width: 980px ){
+	body.et_fixed_nav.et_show_nav.et_header_style_centered #page-container {
+		padding-top: 266px;
+	}
 }
