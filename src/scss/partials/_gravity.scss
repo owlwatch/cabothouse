@@ -106,11 +106,11 @@ body {
 		max-width: 500px;
 		margin: 0 auto !important;
 		+ .gfield {
-			margin-top: 2.5em !important;
+			margin-top: 2em !important;
 		}
 		&.no-description-margin.field_sublabel_below {
 			.gfield_description {
-				margin: 1px 0 9px 1px !important;
+				margin: 2px 0 9px 1px !important;
 				font-size: .813em;
 				letter-spacing: .5pt;
 			}
@@ -120,7 +120,7 @@ body {
 	.gfield_label {
 		font-size: 1.3em;
 		font-weight: 500;
-		margin-bottom: 0.45em;
+		margin-bottom: 0.25em;
 	}
 
 	.gfield_description {
