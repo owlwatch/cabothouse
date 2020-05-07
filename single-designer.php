@@ -27,7 +27,7 @@ get_header();
             
             
             <span class="et_pb_image_wrap ">
-                <a href="mailto:<?php echo $email; ?>"><?php the_post_thumbnail( ); ?></a>
+                <a href="mailto:<?php echo $email; ?>" target="_blank"><?php the_post_thumbnail( ); ?></a>
             </span>
         </div><div class="et_pb_module et_pb_text et_pb_text_0 et_pb_bg_layout_light  et_pb_text_align_left">
             
@@ -61,7 +61,7 @@ if( $phone ){
 if( $email ){
     ?>
 <p>Email<br>
-<a href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a>
+<a href="mailto:<?php echo $email; ?>" target="_blank"><?php echo $email; ?></a>
     <?php
 }
 $terms = wp_get_object_terms( get_the_ID(), \Theme\Taxonomy\Location::NAME );
@@ -137,7 +137,7 @@ if( $page ){
         </div> <!-- .et_pb_text -->
         <?php
         $designer_form_id = get_field( 'designer_contact_form_id', 'theme' );
-        if( $designer_form_id ){
+        if( false && $designer_form_id ){
             ?>
         <div class="chx-designer-form">
             <hr style="border-style: solid; border-width: 1px 0 0; border-color: #ccc;" />
