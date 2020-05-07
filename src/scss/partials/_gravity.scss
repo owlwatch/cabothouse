@@ -110,7 +110,9 @@ body {
 		}
 		&.no-description-margin.field_sublabel_below {
 			.gfield_description {
-				margin: 0.1em 0 0 !important;
+				margin: 1px 0 9px 1px !important;
+				font-size: .813em;
+				letter-spacing: .5pt;
 			}
 		}
 	}
