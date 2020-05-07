@@ -108,6 +108,11 @@ body {
 		+ .gfield {
 			margin-bottom: 1em;
 		}
+		.no-description-margin {
+			.gfield_description {
+				margin: 0.1em 0;
+			}
+		}
 	}
 
 	.gfield_label {
