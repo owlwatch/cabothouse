@@ -108,9 +108,9 @@ body {
 		+ .gfield {
 			margin-bottom: 2em !important;
 		}
-		&.no-description-margin {
+		&.no-description-margin.field_sublabel_below {
 			.gfield_description {
-				margin: 0em 0 !important;
+				margin: 0.1em 0 0 !important;
 			}
 		}
 	}
