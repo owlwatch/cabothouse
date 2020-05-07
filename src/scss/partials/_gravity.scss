@@ -105,6 +105,9 @@ body {
 	.gfield {
 		max-width: 500px;
 		margin: 0 auto !important;
+		+ .gfield {
+			margin-bottom: 1em;
+		}
 	}
 
 	.gfield_label {
@@ -129,7 +132,7 @@ body {
 		color: #fff;
 		margin-bottom: 3em;
 		margin-top: -15px;
-		padding: 8px 10px;
+		padding: 4px 10px;
 		width: 100%;
 		display: table;
 		> * {
