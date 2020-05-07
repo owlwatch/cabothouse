@@ -103,3 +103,14 @@ a{
 		color: #777;
 	}
 }
+
+blockquote p {
+	margin-bottom: 1em;
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+blockquote + blockquote {
+	margin-top: 2em;
+}
