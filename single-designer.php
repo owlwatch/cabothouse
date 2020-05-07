@@ -8,7 +8,9 @@ get_header();
 // lets grab the layout
 ?>
 <div id="main-content">
-	<?php while ( have_posts() ) : the_post(); ?>
+    <?php while ( have_posts() ) : the_post(); 
+        $email = get_field( 'email' );
+        ?>
 
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			
@@ -24,7 +26,9 @@ get_header();
             <div class="et_pb_module et_pb_image et_pb_image_0 et_always_center_on_mobile">
             
             
-            <span class="et_pb_image_wrap "><?php the_post_thumbnail( ); ?></span>
+            <span class="et_pb_image_wrap ">
+                <a href="mailto:<?php echo $email; ?>"><?php the_post_thumbnail( ); ?></a>
+            </span>
         </div><div class="et_pb_module et_pb_text et_pb_text_0 et_pb_bg_layout_light  et_pb_text_align_left">
             
             
@@ -52,6 +56,12 @@ if( $phone ){
     ?>
 <p>Phone<br>
 <a href="tel:<?php echo preg_match('/[^\d]/', $phone); ?>"><?php echo $phone; ?></a>
+    <?php
+}
+if( $email ){
+    ?>
+<p>Email<br>
+<a href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a>
     <?php
 }
 $terms = wp_get_object_terms( get_the_ID(), \Theme\Taxonomy\Location::NAME );
