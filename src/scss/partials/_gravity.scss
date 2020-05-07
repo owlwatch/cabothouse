@@ -134,6 +134,12 @@ body {
 		font-size: 1em;
 	}
 
+	.gform_confirmation_message {
+		background: #f3f3f3;
+		padding: 30px;
+		border: 1px solid #d8d8d8;
+	}
+
 	.paging-toolbar {
 		background: #000;
 		color: #fff;
@@ -154,11 +160,6 @@ body {
 				font-weight: 400;
 				text-align: right;
 			}
-		}
-		.gform_confirmation_message {
-			background: #f3f3f3;
-			padding: 30px;
-			border: 1px solid #d8d8d8;
 		}
 
 	}
