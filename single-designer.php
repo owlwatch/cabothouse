@@ -103,7 +103,9 @@ if( $page ){
         </div> <!-- .et_pb_column --><div class="et_pb_column et_pb_column_3_5 et_pb_column_1    et_pb_css_mix_blend_mode_passthrough">
             
         <?php
-        //print_r( get_field( 'portfolio' ) );
+        echo "<!--";
+        print_r( get_field( 'portfolio' ) );
+        echo "-->";
         $portfolio = get_field( 'portfolio' );
         if( !empty($portfolio) ){
             ob_start();
