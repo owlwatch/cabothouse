@@ -106,11 +106,11 @@ body {
 		max-width: 500px;
 		margin: 0 auto !important;
 		+ .gfield {
-			margin-bottom: 1em !important;
+			margin-bottom: 2em !important;
 		}
 		&.no-description-margin {
 			.gfield_description {
-				margin: 0.1em 0 !important;
+				margin: 0em 0 !important;
 			}
 		}
 	}
