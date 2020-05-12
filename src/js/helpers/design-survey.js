@@ -16,7 +16,7 @@ import UserLocation from './user-location';
 
 	function pageRender(e, i){
 		let $wrapper = $('#gform_wrapper_'+i);
-		if( !$wrapper.find('form').hasClass('design-survey') ){
+		if( !$wrapper.find('form').hasClass('design-survey') || $wrapper.find('form').hasClass('no-paging') ){
 			return;
 		}
 		let page = 1;
