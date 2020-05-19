@@ -11,7 +11,9 @@ get_header();
     <?php while ( have_posts() ) : the_post(); 
         $email = get_field( 'email' );
         ?>
-
+        <h1 class="screen-reader-text">
+            <?php the_title(); ?>
+        </h1>
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			
         <div class="et_pb_section et_pb_section_0 et_section_regular">
