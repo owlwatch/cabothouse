@@ -8,6 +8,9 @@ get_header();
 <div id="main-content">
 	<div class="container">
 		<div id="content-area" class="clearfix">
+			<h1>
+				<?php the_title(); ?>
+			</h1>
 			<?php
 			the_content();
 			?>
