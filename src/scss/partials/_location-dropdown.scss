@@ -74,11 +74,17 @@
 		cursor: pointer;
 		font-size: 15px !important;
 		padding: 0.2em 0.6em !important;
+
+		&:hover {
+			color: #000 !important;
+		}
+
 		@media( max-width: 980px ){
 			font-size: 12px !important;
 			padding: 0.2em 0.4em !important;
 		}
 		&-selected {
+			color: #fff !important;
 			background-color: #2A6130 !important;
 		}
 	}
