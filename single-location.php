@@ -8,8 +8,8 @@ get_header();
 <div id="main-content">
 	<div class="container">
 		<div id="content-area" class="clearfix">
-			<h1>
-				<?php the_title(); ?>
+			<h1 style="text-align: center; padding: 0.5em; background: #d8d8d8;">
+				Locations: <?php the_title(); ?>
 			</h1>
 			<?php
 			the_content();
