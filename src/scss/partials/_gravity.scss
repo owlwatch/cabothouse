@@ -104,6 +104,9 @@ body {
 
 	.gfield {
 		max-width: 500px;
+		&.image-choices-field {
+			max-width: 900px;
+		}
 		margin: 0 auto !important;
 		+ .gfield {
 			margin-top: 2em !important;
