@@ -103,9 +103,9 @@ body {
 	}
 
 	.gfield {
-		max-width: 500px;
+		//max-width: 500px;
 		&.image-choices-field {
-			max-width: 900px;
+			//max-width: 900px;
 		}
 		margin: 0 auto !important;
 		+ .gfield {
@@ -146,22 +146,23 @@ body {
 	.paging-toolbar {
 		margin-bottom: 3em;
 		margin-top: -15px;
-		padding: 4px 10px;
-		width: 100%;
-		display: table;
-		> * {
-			display: table-cell;
-			// &:first-child {
-			// 	font-size: 24px;
-			// 	font-weight: 500;
-			// 	text-align: left;
-			// }
-			// &:last-child {
-			// 	font-size: 16px;
-			// 	font-weight: 400;
-			// 	text-align: right;
-			// }
-		}
+		font-weight: 500;
+		// padding: 4px 10px;
+		// width: 100%;
+		// display: table;
+		// > * {
+		// 	display: table-cell;
+		// 	// &:first-child {
+		// 	// 	font-size: 24px;
+		// 	// 	font-weight: 500;
+		// 	// 	text-align: left;
+		// 	// }
+		// 	// &:last-child {
+		// 	// 	font-size: 16px;
+		// 	// 	font-weight: 400;
+		// 	// 	text-align: right;
+		// 	// }
+		// }
 
 	}
 	.flex-row {
