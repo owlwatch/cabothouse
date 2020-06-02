@@ -46,7 +46,6 @@ import UserLocation from './user-location';
 			$wrapper.find('form').prepend( $toolbar );
 			$toolbar.addClass( 'paging-toolbar' );
 			$toolbar.html(`
-				<span class="label">${title}</span>
 				<span class="pages">Question ${page} of ${total}</span>
 			`);
 		}
