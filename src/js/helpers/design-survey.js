@@ -82,6 +82,8 @@ import UserLocation from './user-location';
 		const windowScrollTop = $(window).scrollTop();
 		const offset = $('body').offset().top + $('.et-fixed-header').outerHeight();
 
+		console.log( windowScrollTop, offset, elementScrollTop );
+
 		const elementScrollTop = $wrapper.offset().top;
 
 		if( elementScrollTop + offset < windowScrollTop ){
