@@ -103,9 +103,9 @@ body {
 	}
 
 	.gfield {
-		//max-width: 500px;
+		max-width: 500px;
 		&.image-choices-field {
-			//max-width: 900px;
+			max-width: 900px;
 		}
 		margin: 0 auto !important;
 		+ .gfield {
@@ -210,7 +210,7 @@ body {
 		border-top: 0;
 	}
 	.gform_previous_button {
-		display: none !important;
+		//display: none !important;
 	}
 }
 body {
