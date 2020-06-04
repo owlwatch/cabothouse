@@ -69,8 +69,28 @@ import UserLocation from './user-location';
 		}
 
 		updateLocation();
+	}
 
+	function checkScroll(e, i){
+		const $wrapper = $('#gform_wrapper_'+i);
+		const $form = $wrapper.find('form');
+		if( !$form.length ){
+			return;
+		}
+
+		// check the scroll position
+		const windowScrollTop = $(window).scrollTop();
+		const offset = $('body').offset().top + $('.et-fixed-header').outerHeight();
+
+		const elementScrollTop = $wrapper.offset().top;
+
+		if( elementScrollTop + offset < windowScrollTop ){
+			$('html,body').animate({
+				scrollTop: elementScrollTop + offset
+			}, 200 );
+		}
 	}
 	UserLocation.onChange(setLocation);
 	$(document).on('gform_post_render', pageRender);
+	$(document).on('gform_post_render', checkScroll);
 })(jQuery);
