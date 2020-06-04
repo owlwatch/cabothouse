@@ -82,9 +82,9 @@ import UserLocation from './user-location';
 		const windowScrollTop = $(window).scrollTop();
 		const offset = $('body').offset().top + $('.et-fixed-header').outerHeight();
 
-		console.log( windowScrollTop, offset, elementScrollTop );
-
 		const elementScrollTop = $wrapper.offset().top;
+
+		console.log( windowScrollTop, offset, elementScrollTop );
 
 		if( elementScrollTop + offset < windowScrollTop ){
 			$('html,body').animate({
