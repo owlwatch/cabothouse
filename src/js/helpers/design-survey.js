@@ -86,9 +86,9 @@ import UserLocation from './user-location';
 
 		console.log( windowScrollTop, offset, $wrapper, $wrapper.offset(), $wrapper.position(), elementScrollTop );
 
-		if( elementScrollTop + offset < windowScrollTop ){
+		if( elementScrollTop - offset < windowScrollTop ){
 			$('html,body').animate({
-				scrollTop: elementScrollTop + offset
+				scrollTop: elementScrollTop - offset
 			}, 200 );
 		}
 	}
