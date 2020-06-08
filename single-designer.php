@@ -29,7 +29,7 @@ get_header();
             
             
             <span class="et_pb_image_wrap ">
-                <a href="mailto:<?php echo $email; ?>?bcc:info@cabothouse.com" target="_blank"><?php the_post_thumbnail( ); ?></a>
+                <a href="mailto:<?php echo $email; ?>?bcc=info@cabothouse.com" target="_blank"><?php the_post_thumbnail( ); ?></a>
             </span>
         </div><div class="et_pb_module et_pb_text et_pb_text_0 et_pb_bg_layout_light  et_pb_text_align_left">
             
@@ -63,7 +63,7 @@ if( $phone ){
 if( $email ){
     ?>
 <p>Email<br>
-<a href="mailto:<?php echo $email; ?>" target="_blank"><?php echo $email; ?></a>
+<a href="mailto:<?php echo $email; ?>?bcc=info@cabothouse.com" target="_blank"><?php echo $email; ?></a>
     <?php
 }
 $terms = wp_get_object_terms( get_the_ID(), \Theme\Taxonomy\Location::NAME );
