@@ -25,7 +25,7 @@ class UserLocation {
 		if( this.ipinfo && this.ipinfo.loc && cabothouse_config.user_ip === this.ipinfo.ip ){
 			return this.lookupLocation();
 		}
-		else {
+		else if( cabothouse_config.ipinfo_token ){
 			$.ajax({
 				url: 'https://ipinfo.io',
 				headers: {
