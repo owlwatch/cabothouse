@@ -39,6 +39,7 @@ class Front extends Singleton
 		wp_localize_script( 'cabothouse', 'cabothouse_config', [
 			'ajaxurl' => admin_url( 'admin-ajax.php' ),
 			'ipinfo_token' => get_field('ip_info_api_key', 'theme'),
+			'my_store' => get_field('enable_my_store', 'theme'),
 			'user_ip' => $_SERVER['REMOTE_ADDR'],
 			'locations' => Service\LocationService::getLocations()
 		]);

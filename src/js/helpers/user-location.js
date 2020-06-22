@@ -6,7 +6,9 @@ class UserLocation {
 
 	constructor(){
 		this.stores = cabothouse_config.locations;
-		this.initLocation();
+		if( cabothouse_config.my_store ){
+			this.initLocation();
+		}
 		this.initEvents();
 		this.dropdown = false;
 	}
