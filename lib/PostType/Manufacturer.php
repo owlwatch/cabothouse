@@ -44,6 +44,7 @@ class Manufacturer extends Singleton
 			"hierarchical"			=> false,
 			"show_ui"				=> true,
 			"show_in_menu"        	=> true,
+			'exclude_from_search'   => true,
 			'rewrite'               => [
 				'with_front'          => false,
 				'slug'                => 'manufacturers',
