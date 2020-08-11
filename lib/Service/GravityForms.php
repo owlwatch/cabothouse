@@ -16,7 +16,7 @@ class GravityForms extends Singleton
 		add_filter( 'gform_merge_tag_filter', [$this, 'mergeTagFilter'], 10, 5 );
 		add_filter( 'gform_replace_merge_tags', [$this, 'storePhoneMergeTag'], 10, 7);
 		add_filter( 'gform_get_input_value', [$this, 'getInputValueFilter'], 10, 4 );
-		add_filter( 'gform_notification', [$this, 'routeAdminEmails'], 10, 3 );
+		// add_filter( 'gform_notification', [$this, 'routeAdminEmails'], 10, 3 );
 	}
 
 	public function addInputName( $content, $field, $value, $lead_id, $form_id )
