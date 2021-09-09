@@ -7,6 +7,38 @@ add_filter('body_class', function( $classes ){
 get_header();
 // lets grab the layout
 ?>
+
+<style>
+.et_pb_slider .et_pb_slide_image {
+	margin-top: 0 !important;
+}
+
+.et_pb_slide {
+	padding: 0;
+}
+
+.et_pb_slide_image img {
+	max-height: inherit !important;
+	width: 100%;
+	height: 100%;
+}
+
+.et_pb_slide_description {
+	display: none !important;
+}
+
+.et_pb_slider .et_pb_slide_0 {
+	background-color: #FFFFFF !important;
+}
+
+.et_pb_bg_layout_light .et-pb-arrow-next, .et_pb_bg_layout_light .et-pb-arrow-prev {
+	color: #FFFFFF !important;
+}	
+.et_pb_empty_slide {
+	height: auto !important;
+}
+</style>
+
 <div id="main-content">
     <?php while ( have_posts() ) : the_post(); 
         $email = get_field( 'email' );
@@ -105,6 +137,7 @@ if( $page ){
         </div> <!-- .et_pb_column --><div class="et_pb_column et_pb_column_3_5 et_pb_column_1    et_pb_css_mix_blend_mode_passthrough">
             
         <?php
+	    /*    
         echo "<!--";
         print_r( get_field( 'portfolio' ) );
         echo "-->";
@@ -126,7 +159,26 @@ if( $page ){
         
             echo do_shortcode( ob_get_clean() );
         }
+        */
         ?>
+        
+        
+		<div class="et_pb_module et_pb_slider et_pb_slider_fullwidth_off et_pb_slider_no_pagination et_pb_slider_no_shadow et_pb_slider_show_image et_pb_slider_hide_description et_pb_bg_layout_light">
+			<div class="et_pb_slides">
+				
+				<?php
+				$portfolio = get_field( 'portfolio' );
+				
+				foreach($portfolio as $image){
+					echo do_shortcode('[et_pb_slide image="' . $image['url'] . '" _builder_version="3.21.1" background_color="#ffffff"][/et_pb_slide]');
+				}
+				?>
+			
+			</div> <!-- .et_pb_slides -->
+		</div> <!-- .et_pb_slider -->
+        
+        
+        
         
         <div class="et_pb_module et_pb_text et_pb_text_1 et_pb_bg_layout_light  et_pb_text_align_left">
             
