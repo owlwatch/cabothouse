@@ -41,7 +41,7 @@ $phone = get_field( 'phone' );
 if( $phone ){
     ?>
 <p>Phone<br>
-<a href="tel:<?php echo preg_replace('/[^\d]/', '', $phone); ?>"><?php echo $phone; ?></a>
+<a href="tel:<?php echo preg_match('/[^\d]/', $phone); ?>"><?php echo $phone; ?></a>
     <?php
 }
 if( $email ){
@@ -87,6 +87,7 @@ if( $page ){
     [/et_pb_text]
     [/et_pb_column]
     [et_pb_column _builder_version="4.10.6" _module_preset="default" type="3_5"]
+
     [et_pb_text _builder_version="4.10.6" _module_preset="default" hover_enabled="0" sticky_enabled="0"]
 
     <?php
@@ -106,22 +107,6 @@ if( $page ){
             <?php
         }
         ?>
-		<div class="et_pb_module et_pb_slider et_pb_slider_fullwidth_off et_pb_slider_no_pagination et_pb_slider_no_shadow et_pb_slider_show_image et_pb_slider_hide_description et_pb_bg_layout_light">
-			<div class="et_pb_slides">
-				
-				<?php
-				$portfolio = get_field( 'portfolio' );
-				
-				foreach($portfolio as $image){
-					echo do_shortcode('[et_pb_slide image="' . $image['url'] . '" _builder_version="3.21.1" background_color="#ffffff"][/et_pb_slide]');
-				}
-				?>
-			
-			</div> <!-- .et_pb_slides -->
-		</div> <!-- .et_pb_slider -->
-        
-        
-        
         
         <div class="et_pb_module et_pb_text et_pb_text_1 et_pb_bg_layout_light  et_pb_text_align_left">
             <div class="et_pb_text_inner">
