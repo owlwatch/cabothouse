@@ -105,10 +105,7 @@ if( $page ){
             [/et_pb_slider]
             <?php
         }
-        */
         ?>
-        
-        
 		<div class="et_pb_module et_pb_slider et_pb_slider_fullwidth_off et_pb_slider_no_pagination et_pb_slider_no_shadow et_pb_slider_show_image et_pb_slider_hide_description et_pb_bg_layout_light">
 			<div class="et_pb_slides">
 				
