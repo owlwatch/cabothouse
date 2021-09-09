@@ -2,4 +2,3 @@ node_modules
 .cache
 .remote-sync.json
 sftp.json
-tracking-tags
