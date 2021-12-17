@@ -82,21 +82,8 @@ function exception_error_handler($severity, $message, $file, $line) {
 set_error_handler("exception_error_handler");
 
 */
-<<<<<<< HEAD
 
 add_filter('pre_http_request', function($preempt, $parsed_args, $url){
 	$e = new Exception('test');
 	error_log( 'pre_http_request: '.$url."\n".$e->getTraceAsString());
 });
-=======
-/*
-function add_preload_font() {
-?>
-<link rel="preload" href="/wp-content/themes/Divi/style.dev.css" as="style">
-<link rel="preload" href="/wp-content/themes/Divi/core/admin/fonts/modules.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/wp-content/themes/Divi/core/admin/fonts/modules.ttf" as="font" />
-<?php }
-add_action('wp_head', 'add_preload_font', 99);
-*/
-
->>>>>>> c4a5bb4876a13ee46063c499ced1eb33a51c0cfb

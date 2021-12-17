@@ -23,7 +23,6 @@ class Theme extends Singleton
 		$this->registerServices();
 
 		$this->registerSidebars();
-
 	}
 
 	protected function registerPostTypesAndTaxonomies()
