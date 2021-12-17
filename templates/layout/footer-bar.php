@@ -1,3 +1,4 @@
+<!--
 <div class="ch-footer-bar">
 
 	<div class="social-icons">
@@ -10,3 +11,4 @@
 		<?php echo et_get_footer_credits() ?>
 	</div>
 </div>
+-->
