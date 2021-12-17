@@ -4,38 +4,23 @@ add_filter('body_class', function( $classes ){
 	return $classes;
 });
 
-get_header();
-// lets grab the layout
-?>
-<div id="main-content">
-    <?php while ( have_posts() ) : the_post(); 
-        $email = get_field( 'email' );
-        ?>
-        <h1 class="screen-reader-text">
-            <?php the_title(); ?>
-        </h1>
-		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-			
-        <div class="et_pb_section et_pb_section_0 et_section_regular">
-				
-				
-				
-				
-                <div class="et_pb_row et_pb_row_0">
-            <div class="et_pb_column et_pb_column_2_5 et_pb_column_0    et_pb_css_mix_blend_mode_passthrough">
+add_filter('the_content', function(){
+    $email = get_field( 'email' );
+    // [et_pb_section fb_built="1" _builder_version="4.10.6" _module_preset="default"][et_pb_row _builder_version="4.10.6" _module_preset="default" column_structure="2_5,3_5"][et_pb_column _builder_version="4.10.6" _module_preset="default" type="2_5"][et_pb_text _builder_version="4.10.6" _module_preset="default" hover_enabled="0" sticky_enabled="0"][/et_pb_text][/et_pb_column][et_pb_column _builder_version="4.10.6" _module_preset="default" type="3_5"][et_pb_text _builder_version="4.10.6" _module_preset="default" hover_enabled="0" sticky_enabled="0"][/et_pb_text][/et_pb_column][/et_pb_row][/et_pb_section]
+    ob_get_clean();
+    ?>
+    [et_pb_section fb_built="1" _builder_version="4.10.6" _module_preset="default"]
+    [et_pb_row _builder_version="4.10.6" _module_preset="default" column_structure="2_5,3_5"]
+    [et_pb_column _builder_version="4.10.6" _module_preset="default" type="2_5"]
+    <div class="et_pb_module et_pb_image et_pb_image_0 et_always_center_on_mobile">
             
-            
-            <div class="et_pb_module et_pb_image et_pb_image_0 et_always_center_on_mobile">
-            
-            
-            <span class="et_pb_image_wrap ">
-                <a href="mailto:<?php echo $email; ?>?bcc=info@cabothouse.com" target="_blank"><?php the_post_thumbnail( ); ?></a>
-            </span>
-        </div><div class="et_pb_module et_pb_text et_pb_text_0 et_pb_bg_layout_light  et_pb_text_align_left">
-            
-            
-            <div class="et_pb_text_inner">
-<p>Interior Designer<br>
+        
+        <span class="et_pb_image_wrap ">
+            <a href="mailto:<?php echo $email; ?>?bcc=info@cabothouse.com" target="_blank"><?php the_post_thumbnail( ); ?></a>
+        </span>
+    </div>
+    [et_pb_text _builder_version="4.10.6" _module_preset="default" hover_enabled="0" sticky_enabled="0"]
+    <p>Interior Designer<br>
 <strong>
     <?php the_title(); ?>
     <?php 
@@ -100,11 +85,14 @@ if( $page ){
     <?php
 }
 ?>
-            </div>
-        </div> <!-- .et_pb_text -->
-        </div> <!-- .et_pb_column --><div class="et_pb_column et_pb_column_3_5 et_pb_column_1    et_pb_css_mix_blend_mode_passthrough">
-            
-        <?php
+    [/et_pb_text]
+    [/et_pb_column]
+    [et_pb_column _builder_version="4.10.6" _module_preset="default" type="3_5"]
+    [et_pb_text _builder_version="4.10.6" _module_preset="default" hover_enabled="0" sticky_enabled="0"]
+
+    [et_pb_text _builder_version="4.10.6" _module_preset="default" hover_enabled="0" sticky_enabled="0"]
+
+    <?php
         echo "<!--";
         print_r( get_field( 'portfolio' ) );
         echo "-->";
@@ -153,15 +141,59 @@ if( $page ){
         </div>
             <?php
         ?>
-        </div> <!-- .et_pb_column -->
-            
-            
-        </div> <!-- .et_pb_row -->
-            
-            
-        </div>
+    [/et_pb_text]
+    [/et_pb_column]
+    [/et_pb_row]
+    [/et_pb_section]
+    <?php
+    $content = ob_get_clean();
+    return $content;
+});
+die('hi');
+get_header();
+// lets grab the layout
+?>
+<div id="main-content">
+    <?php while ( have_posts() ) : the_post(); 
+        $email = get_field( 'email' );
+        ?>
+        <h1 class="screen-reader-text">
+            <?php the_title(); ?>
+        </h1>
 
+<style>
+.et_pb_slider .et_pb_slide_image {
+	margin-top: 0 !important;
+}
 
+.et_pb_slide {
+	padding: 0;
+}
+
+.et_pb_slide_image img {
+	max-height: inherit !important;
+	width: 100%;
+	height: 100%;
+}
+
+.et_pb_slide_description {
+	display: none !important;
+}
+
+.et_pb_slider .et_pb_slide_0 {
+	background-color: #FFFFFF !important;
+}
+
+.et_pb_bg_layout_light .et-pb-arrow-next, .et_pb_bg_layout_light .et-pb-arrow-prev {
+	color: #FFFFFF !important;
+}	
+.et_pb_empty_slide {
+	height: auto !important;
+}
+</style>
+		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+        
+            <?php the_content(); ?>
 		</article> <!-- .et_pb_post -->
 
 	<?php endwhile; ?>

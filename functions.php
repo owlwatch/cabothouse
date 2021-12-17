@@ -2,6 +2,8 @@
 
 require_once __DIR__."/vendor/autoload.php";
 
+use \Exception;
+
 Theme\Theme::init();
 
 add_filter('et_builder_google_fonts', function( $fonts ){
@@ -46,3 +48,8 @@ function exception_error_handler($severity, $message, $file, $line) {
 set_error_handler("exception_error_handler");
 
 */
+
+add_filter('pre_http_request', function($preempt, $parsed_args, $url){
+	$e = new Exception('test');
+	error_log( 'pre_http_request: '.$url."\n".$e->getTraceAsString());
+});
