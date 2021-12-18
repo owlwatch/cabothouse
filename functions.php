@@ -83,7 +83,7 @@ set_error_handler("exception_error_handler");
 
 add_filter('pre_http_request', function($preempt, $parsed_args, $url){
 	if( strpos($url, home_url()) !== false ){
-		error_log( print_r($parsed_args, 1));
+		error_log( print_r($url, 1));
 	}
 	return $preempt;
 }, 10, 3);
