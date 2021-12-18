@@ -82,7 +82,8 @@ set_error_handler("exception_error_handler");
 */
 
 add_filter('pre_http_request', function($preempt, $parsed_args, $url){
-	$e = new \Exception('test');
-	error_log( 'pre_http_request: '.$url."\n".$e->getTraceAsString());
+	if( strpos($url, home_url()) !== false ){
+		error_log( print_r($parsed_args, 1));
+	}
 	return $preempt;
 }, 10, 3);
