@@ -79,7 +79,7 @@ src="https://www.facebook.com/tr?id=691642787671980&ev=PageView&noscript=1" />
 
 <script>
 jQuery(document).ready(function(){
-	jQuery('.et_pb_gallery_item').attr('data-action','inquire');
+	// jQuery('.et_pb_gallery_item').attr('data-action','inquire');
 
 	jQuery('.et_pb_gallery_item').click(function(){
 		var getSource = jQuery(this).find('.et_pb_gallery_image a').attr('href');

@@ -102,8 +102,9 @@
 			}
 		});
 
-		$(document).on('click', '.mfp-wrap [data-action="inquire"]', e => {
+		$(document).on('click', '.mfp-info[data-action="inquire"]', e => {
 			var $btn = $(e.target);
+			console.log($btn);
 			$(document).trigger('inquire.contact-widget', [
 				$btn.data('title'), $btn.data('image')
 			]);
