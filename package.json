@@ -11,8 +11,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "npx parcel watch ./src/cabothouse.js -d build --no-hmr",
-    "build": "npx parcel build ./src/cabothouse.js -d build --no-source-maps"
+    "watch": "./node_modules/.bin/parcel watch ./src/cabothouse.js -d build --no-hmr",
+    "build": "./node_modules/.bin/parcel build ./src/cabothouse.js -d build --no-source-maps"
   },
   "author": "",
   "license": "ISC",
