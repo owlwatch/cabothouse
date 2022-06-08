@@ -79,7 +79,7 @@ src="https://www.facebook.com/tr?id=691642787671980&ev=PageView&noscript=1" />
 
 <script>
 jQuery(document).ready(function(){
-	// jQuery('.et_pb_gallery_item').attr('data-action','inquire');
+	jQuery('.et_pb_gallery_item').attr('data-action','inquire');
 
 	jQuery('.et_pb_gallery_item').click(function(){
 		var getSource = jQuery(this).find('.et_pb_gallery_image a').attr('href');
@@ -94,6 +94,7 @@ jQuery(document).ready(function(){
 			jQuery('#input_5_7').val(getSource);
 			jQuery('#input_5_6').val(getSourceTitle);
 			
+			console.log(getSource);
 		}, 200);	
 	});
 	
@@ -109,11 +110,13 @@ jQuery(document).ready(function(){
 	
 	// Close pop-form when clicking image X button
 	jQuery('.mfp-close').click(function(){
-		jQuery('.contact-widget').removeClass('open');
+		console.log('close is clicked');
+	    jQuery('.contact-widget').removeClass('open');
 	});
 		
 	// Close form and hide close button
 	jQuery('.contact-widget-close').click(function(){
+		console.log('contact-widget-close clicked');
 	    jQuery('.contact-widget').removeClass('open');
 	    jQuery('.contact-widget-close').hide();
 	});
@@ -121,9 +124,11 @@ jQuery(document).ready(function(){
 	// Adding close when clicking .mfp-details-buttons button on furniture image
 	jQuery('.et_pb_gallery_image img').click(function(){
 		setTimeout( function(){
+			console.log('button has been found');
 			jQuery('.mfp-details-buttons .mfp-info').click(function(){
 				jQuery('.contact-widget').prepend('<div class="contact-widget-close">×</div>');
 				jQuery('.contact-widget-close').show();
+			    console.log('mfp-info clicked');
 			});
 		}, 1000);
 	});

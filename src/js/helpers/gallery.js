@@ -3,82 +3,82 @@
 
 	$(document).on('et_pb_after_init_modules', function(){
 		jQuery('.et_post_gallery').each(function(){
-			// $(this).data().magnificPopup.image = {
-			// 	titleSrc: function(item){
-			// 		var title = item.el.attr('title');
-			// 		var image = item.el.attr('href');
-			// 		var $data = $('<div />');
-			// 		$('<h4 />')
-			// 			.html(title)
-			// 			.appendTo( $data )
-			// 			;
-			// 		return $data.html();
-			// 	},
+			$(this).data().magnificPopup.image = {
+				titleSrc: function(item){
+					var title = item.el.attr('title');
+					var image = item.el.attr('href');
+					var $data = $('<div />');
+					$('<h4 />')
+						.html(title)
+						.appendTo( $data )
+						;
+					return $data.html();
+				},
 
-			// 	markup: '<div class="mfp-figure">'+
-			//         		'<div class="mfp-close"></div>'+
-			// 				'<div class="mfp-top-bar">'+
-			// 					'<div class="mfp-title"></div>'+
-			// 				'</div>'+
-			//             	'<div class="mfp-img"></div>'+
-			//             	'<div class="mfp-bottom-bar">'+
-			// 					'<div class="mfp-details">'+
-			// 						'<div class="mfp-details-buttons">'+
-			// 							'<button class="mfp-info" data-toggle="mfp-caption">'+
-			// 								'<span class="fas fa-angle-up"></span> '+
-			// 								'Details'+
-			// 							'</button>'+
-			// 							'<button class="mfp-info" data-action="inquire">'+
-			// 								'<span class="fas fa-comment-alt"></span> '+
-			// 								'Like What You see? Get this look'+
-			// 							'</button>'+
-			// 						'</div>'+
-			// 						'<div class="mfp-caption-container">'+
-			// 							'<div class="mfp-caption"></div>'+
-			// 						'</div>'+
-			// 					'</div>'+
-			// 					//'<div class="inquire-button"></div>'+
-			//               		'<div class="mfp-counter"></div>'+
-			//             	'</div>'+
-			//           	'</div>' // Popup HTML markup. `.mfp-img` div will be replaced with img tag, `.mfp-close` by close button
-			// };
-			// $(this).on('mfpMarkupParse', function(event, template, values, item){
-			// 	var title = item.el.attr('title');
-			// 	var image = item.el.attr('href');
+				markup: '<div class="mfp-figure">'+
+			        		'<div class="mfp-close"></div>'+
+							'<div class="mfp-top-bar">'+
+								'<div class="mfp-title"></div>'+
+							'</div>'+
+			            	'<div class="mfp-img"></div>'+
+			            	'<div class="mfp-bottom-bar">'+
+								'<div class="mfp-details">'+
+									'<div class="mfp-details-buttons">'+
+										'<button class="mfp-info" data-toggle="mfp-caption">'+
+											'<span class="fas fa-angle-up"></span> '+
+											'Details'+
+										'</button>'+
+										'<button class="mfp-info" data-action="inquire">'+
+											'<span class="fas fa-comment-alt"></span> '+
+											'Like What You see? Get this look'+
+										'</button>'+
+									'</div>'+
+									'<div class="mfp-caption-container">'+
+										'<div class="mfp-caption"></div>'+
+									'</div>'+
+								'</div>'+
+								//'<div class="inquire-button"></div>'+
+			              		'<div class="mfp-counter"></div>'+
+			            	'</div>'+
+			          	'</div>' // Popup HTML markup. `.mfp-img` div will be replaced with img tag, `.mfp-close` by close button
+			};
+			$(this).on('mfpMarkupParse', function(event, template, values, item){
+				var title = item.el.attr('title');
+				var image = item.el.attr('href');
 
-			// 	// caption?
-			// 	var caption = item.el
-			// 	                  .closest('.et_pb_gallery_item')
-			// 					  .find('.et_pb_gallery_caption')
-			// 					  .html();
+				// caption?
+				var caption = item.el
+				                  .closest('.et_pb_gallery_item')
+								  .find('.et_pb_gallery_caption')
+								  .html();
 
-			// 	if( caption ) caption = caption.trim();
+				if( caption ) caption = caption.trim();
 
-			// 	setTimeout(()=>{
-			// 		// add our stuff to the top bar
-			// 		if( caption ){
-			// 			$('.mfp-caption').html( caption );
-			// 			$('[data-toggle="mfp-caption"]').show();
-			// 		}
-			// 		else {
-			// 			$('.mfp-caption').html('');
-			// 			$('[data-toggle="mfp-caption"]').hide();
-			// 		}
-			// 		$('[data-action="inquire"]')
-			// 			.data('title', title)
-			// 			.data('image', image);
-			// 	},0);
+				setTimeout(()=>{
+					// add our stuff to the top bar
+					if( caption ){
+						$('.mfp-caption').html( caption );
+						$('[data-toggle="mfp-caption"]').show();
+					}
+					else {
+						$('.mfp-caption').html('');
+						$('[data-toggle="mfp-caption"]').hide();
+					}
+					$('[data-action="inquire"]')
+						.data('title', title)
+						.data('image', image);
+				},0);
 
-			// });
+			});
 
-			// var hash = window.location.hash.replace(/^#/,'');
-			// var $a = $(this).find('a[href="'+hash+'"]');
-			// if( hash && $a.length ){
-			// 	$a.click();
-			// 	var url =location.pathname+
-			// 			 (location.search?location.search:"");
-			// 	window.history.replaceState({},'',url);
-			// }
+			var hash = window.location.hash.replace(/^#/,'');
+			var $a = $(this).find('a[href="'+hash+'"]');
+			if( hash && $a.length ){
+				$a.click();
+				var url =location.pathname+
+						 (location.search?location.search:"");
+				window.history.replaceState({},'',url);
+			}
 
 		});
 		$(document).on('click', '[data-toggle="mfp-caption"]', e => {
