@@ -14,8 +14,6 @@ class Manufacturer extends Singleton
 	{
 		add_action( 'init', [$this, 'register'], 1 );
 		add_filter( 'et_builder_post_types', [$this, 'filterBuilderPostTypes'] );
-
-
 	}
 
 	public function register()

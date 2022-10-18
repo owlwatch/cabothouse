@@ -80,13 +80,12 @@ function exception_error_handler($severity, $message, $file, $line) {
 set_error_handler("exception_error_handler");
 
 */
-/*
-function add_preload_font() {
-?>
-<link rel="preload" href="/wp-content/themes/Divi/style.dev.css" as="style">
-<link rel="preload" href="/wp-content/themes/Divi/core/admin/fonts/modules.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/wp-content/themes/Divi/core/admin/fonts/modules.ttf" as="font" />
-<?php }
-add_action('wp_head', 'add_preload_font', 99);
-*/
 
+// add_filter('pre_http_request', function($preempt, $parsed_args, $url){
+// 	if( strpos($url, home_url()) !== false ){
+// 		// error_log( print_r($url, 1));
+// 		// $e = new Exception();
+// 		// error_log( $e->getTraceAsString() );
+// 	}
+// 	return $preempt;
+// }, 10, 3);

@@ -4,7 +4,7 @@ namespace Theme;
 
 class Theme extends Singleton
 {
-	const VERSION = '2.0.20';
+	const VERSION = '2.0.23';
 	
 	protected function __construct()
 	{
@@ -23,7 +23,6 @@ class Theme extends Singleton
 		$this->registerServices();
 
 		$this->registerSidebars();
-
 	}
 
 	protected function registerPostTypesAndTaxonomies()
