@@ -29,7 +29,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => 'c4a5bb4876a13ee46063c499ced1eb33a51c0cfb',
+    'reference' => '6e5cc17f3e21f6929655f8020dd9819c3c03eba0',
     'name' => 'cabothf/cabothouse',
   ),
   'versions' => 
@@ -41,7 +41,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => 'c4a5bb4876a13ee46063c499ced1eb33a51c0cfb',
+      'reference' => '6e5cc17f3e21f6929655f8020dd9819c3c03eba0',
     ),
   ),
 );
