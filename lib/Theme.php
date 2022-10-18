@@ -52,6 +52,7 @@ class Theme extends Singleton
 	{
 		\Theme\Plugin\Algolia::init();
 		\Theme\Plugin\ContactWidget::init();
+		\Theme\Plugin\Facebook::init();
 	}
 
 	protected function registerServices()
