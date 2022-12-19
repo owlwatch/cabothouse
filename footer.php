@@ -4,6 +4,12 @@
  *
  * @since ??
  */
+if ( et_theme_builder_overrides_layout( ET_THEME_BUILDER_HEADER_LAYOUT_POST_TYPE ) || et_theme_builder_overrides_layout( ET_THEME_BUILDER_FOOTER_LAYOUT_POST_TYPE ) ) {
+    // Skip rendering anything as this partial is being buffered anyway.
+    // In addition, avoids get_sidebar() issues since that uses
+    // locate_template() with require_once.
+    return;
+}
 do_action( 'et_after_main_content' );
 
 if ( 'on' == et_get_option( 'divi_back_to_top', 'false' ) ) : ?>

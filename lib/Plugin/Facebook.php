@@ -13,11 +13,16 @@ class Facebook extends Singleton
 
 	public function filterConfirmationBefore($confirmation, $form, $entry, $ajax)
 	{
-		error_log( print_r( ['confirmation'=>$confirmation], 1 ) );
+		if( !$ajax ){
+			return $confirmation;
+		}
 		$this->confirmation = $confirmation;
 	}
 	public function filterConfirmationAfter($confirmation, $form, $entry, $ajax)
 	{
-		return $this->confirmation;
+		if( !$ajax ){
+			return $confirmation;
+		}
+		return $ajax ? $this->confirmation : $confirmation;
 	}
 }
