@@ -15,18 +15,18 @@ foreach( $locations as $location ){
     $location_map[$location->term_id]->designers=[];
 }
 
-usort( $designers->posts, function($a, $b){
+// usort( $designers->posts, function($a, $b){
     
-    $a->isManager = preg_match('/manager/i', get_field( 'title', $a ) );
-    $b->isManager = preg_match('/manager/i', get_field( 'title', $b ) );
-    if( $a->isManager && !$b->isManager ){
-        return -1;
-    }
-    if( $b->isManager && !$a->isManager ){
-        return 1;
-    }
-    return strcasecmp( $a->post_title, $b->post_title );
-});
+//     $a->isManager = preg_match('/manager/i', get_field( 'title', $a ) );
+//     $b->isManager = preg_match('/manager/i', get_field( 'title', $b ) );
+//     if( $a->isManager && !$b->isManager ){
+//         return -1;
+//     }
+//     if( $b->isManager && !$a->isManager ){
+//         return 1;
+//     }
+//     return strcasecmp( $a->post_title, $b->post_title );
+// });
 
 // set the 
 foreach( $designers->posts as $designer ){
