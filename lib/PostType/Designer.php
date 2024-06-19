@@ -146,7 +146,7 @@ if( $page ){
         $portfolio = get_field( 'portfolio' );
         if( !empty($portfolio) ){
             ?>
-[et_pb_slider _builder_version="4.25.2" _module_preset="default" show_pagination="off" height="500px" hover_enabled="0" sticky_enabled="0" auto="on" animation_style="fade" auto_speed="5000"]
+[et_pb_slider _builder_version="4.25.2" _module_preset="default" height="500px" hover_enabled="0" sticky_enabled="0" auto="on" animation_style="fade" auto_speed="5000"]
             <?php
             foreach( $portfolio as $image){
                 ?>
