@@ -149,16 +149,16 @@ if( $page ){
         $portfolio = get_field( 'portfolio' );
         if( !empty($portfolio) ){
             ?>
-            [et_pb_slider show_pagination="off" admin_label="Designer Portfolio Photos" _builder_version="3.21.1" module_class="slider-4-3"]
+[et_pb_slider _builder_version="4.10.5" _module_preset="default" hover_enabled="0" global_colors_info="{}" height="500px" sticky_enabled="0"]
             <?php
             foreach( $portfolio as $image){
                 ?>
-            [et_pb_slide _builder_version="3.21.1" background_image="<?php echo $image['url'] ?>"]
-            [/et_pb_slide]
+[et_pb_slide _builder_version="4.10.5" _module_preset="default" hover_enabled="0" global_colors_info="{}" sticky_transition="on" use_background_color_gradient="on" title_text="Frame 107" background_image="<?php echo $image['url'] ?>" background_enable_image="on" sticky_enabled="0"]
+[/et_pb_slide]
                 <?php
             }
             ?>
-            [/et_pb_slider]
+[/et_pb_slider]
             <?php
         }
         ?>
