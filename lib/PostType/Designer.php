@@ -142,9 +142,6 @@ if( $page ){
     [/et_pb_text]
     [/et_pb_column]
     [et_pb_column _builder_version="4.10.6" _module_preset="default" type="3_5"]
-
-    [et_pb_text _builder_version="4.10.6" _module_preset="default" hover_enabled="0" sticky_enabled="0"]
-
     <?php
         $portfolio = get_field( 'portfolio' );
         if( !empty($portfolio) ){
@@ -162,7 +159,7 @@ if( $page ){
             <?php
         }
         ?>
-        
+[et_pb_text _builder_version="4.10.6" _module_preset="default" hover_enabled="0" sticky_enabled="0"]
         <div class="et_pb_module et_pb_text et_pb_text_1 et_pb_bg_layout_light  et_pb_text_align_left">
             <div class="et_pb_text_inner">
                 <?php
