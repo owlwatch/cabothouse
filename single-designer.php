@@ -1,11 +1,11 @@
 <?php
 
-add_filter('body_class', function( $classes ){
+add_filter('-body_class', function( $classes ){
 	$classes[] = 'et_full_width_page';
 	return $classes;
 });
 
-add_filter('the_content', function(){
+add_filter('-the_content', function(){
     $email = get_field( 'email' );
     // [et_pb_section fb_built="1" _builder_version="4.10.6" _module_preset="default"][et_pb_row _builder_version="4.10.6" _module_preset="default" column_structure="2_5,3_5"][et_pb_column _builder_version="4.10.6" _module_preset="default" type="2_5"][et_pb_text _builder_version="4.10.6" _module_preset="default" hover_enabled="0" sticky_enabled="0"][/et_pb_text][/et_pb_column][et_pb_column _builder_version="4.10.6" _module_preset="default" type="3_5"][et_pb_text _builder_version="4.10.6" _module_preset="default" hover_enabled="0" sticky_enabled="0"][/et_pb_text][/et_pb_column][/et_pb_row][/et_pb_section]
     ob_start();
