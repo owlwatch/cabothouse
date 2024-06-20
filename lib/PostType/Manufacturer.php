@@ -15,7 +15,7 @@ class Manufacturer extends Singleton
 	{
 		add_action('init', [$this, 'register'], 1);
 		add_filter('et_builder_post_types', [$this, 'filterBuilderPostTypes']);
-		add_filter('the_content', [$this, 'the_content'], 1);
+		add_filter('the_content', [$this, 'the_content'], 10);
 	}
 
 	public function register()
@@ -71,7 +71,7 @@ class Manufacturer extends Singleton
 		// lets grab the layout
 		$layout = get_field('manufacturer_layout', 'theme');
 		if ($layout) {
-			add_shortcode('manufacturer_content', function () {
+			add_shortcode('manufacturer_content', function () use($content){
 				ob_start();
 				$website = get_field('website');
 ?>
@@ -95,7 +95,7 @@ class Manufacturer extends Singleton
 					?>
 				</h1>
 				<?php
-				the_content();
+				echo $content;
 				if ($website) {
 				?>
 					<p style="text-align: center;">
